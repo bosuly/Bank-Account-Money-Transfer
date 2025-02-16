@@ -1,0 +1,116 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package store;
+
+/**
+ *
+ * @author USER
+ */
+public class bankaccount {
+    public String accountnumber;
+    public double balance;
+    public double deposit;
+    public double withdraw;
+      public String accountnumber2;
+    public double balance2;
+    public double deposit2;
+    public double withdraw2;
+     public bankaccount() {
+
+        this.accountnumber="005";
+        this.balance=0;
+        this.deposit=0;
+        this.withdraw=0;
+         this.accountnumber2="006";
+        this.balance2=0;
+        this.deposit2=0;
+        this.withdraw2=0;
+
+    }
+
+    public bankaccount(String accountnumber, double balance, double deposit, double withdraw,String accountnumber2, double balance2, double deposit2, double withdraw2) {
+       this.accountnumber=accountnumber;
+        this.balance=balance;
+        this.deposit=deposit;
+        this.withdraw=withdraw;
+          this.accountnumber2=accountnumber2;
+        this.balance2=balance2;
+        this.deposit2=deposit2;
+        this.withdraw2=withdraw2;
+
+    }
+      public void displayaccountinfo() {
+          System.out.println("ACCOUNT INFORMATION");
+          System.out.println("ACCOUNT NUMBER: "+ accountnumber);
+          System.out.println("BALANCE: "+ balance);
+          System.out.println("DEPOSIT: "+deposit);
+          System.out.println("BALANCE AFTER DEPOSIT: "+ calculatedeposit());
+          System.out.println("WITHDRAW: "+ withdraw);
+          if(calculatedeposit()>=withdraw){
+              
+          System.out.println("BALANCE AFTER WITHDRAW: "+ calculatewithdraw() );
+          }else{
+              System.out.println("BALANCE AFTER WITHDRAW: "+ "NOT VALID");
+          }
+          if(calculatedeposit()>=withdraw){
+          System.out.println("FINAL BALANCE: "+ finalbalance());
+          }else {
+              System.out.println("FINAL BALANCE:"+"NOT VALID");
+          }
+          System.out.println("---------------------------------------");
+               System.out.println("---------------------------------------");
+               
+               System.out.println("ACCOUNT INFORMATION");
+          System.out.println("ACCOUNT NUMBER: "+ accountnumber2);
+          System.out.println("BALANCE: "+ balance2);
+          System.out.println("DEPOSIT: "+deposit2);
+          System.out.println("BALANCE AFTER DEPOSIT: "+ calculatedeposit2());
+          System.out.println("WITHDRAW: "+ withdraw2);
+          if(calculatedeposit()>=withdraw2){
+              
+          System.out.println("BALANCE AFTER WITHDRAW: "+ calculatewithdraw2() );
+          }else{
+              System.out.println("BALANCE AFTER WITHDRAW: "+ "NOT VALID");
+          }
+          if(calculatedeposit2()>=withdraw2){
+          System.out.println("FINAL BALANCE: "+ finalbalance2());
+          }else {
+              System.out.println("FINAL BALANCE:"+"NOT VALID");
+          }
+          System.out.println("---------------------------------------");
+               System.out.println("---------------------------------------");
+      }
+       public double calculatewithdraw() {
+       double k=0;  
+            k=calculatedeposit() -withdraw; 
+       return k;
+    }public double calculatedeposit() {
+       double j=0;
+         j=balance+deposit;
+         return j;
+      
+    } public double finalbalance(){
+        double h=0;     
+       h=calculatedeposit()-withdraw;     
+        return h;
+    }
+    public double calculatewithdraw2() {
+       double k=0;  
+            k=calculatedeposit2() -withdraw2; 
+       return k;
+    }public double calculatedeposit2() {
+       double j=0;
+         j=balance2+deposit2;
+         return j;
+      
+    } public double finalbalance2(){
+        double h=0;     
+       h=calculatedeposit2()-withdraw2;     
+        return h;
+    }
+
+
+
+}
