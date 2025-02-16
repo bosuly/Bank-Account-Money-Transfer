@@ -1,0 +1,43 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package store;
+
+/**
+ *
+ * @author USER
+ */
+public class bank extends bankaccount{
+    
+    public double transfer;
+    
+    public bank(){
+        this.transfer=0;
+    }
+    
+      public bank(String accountnumber, double balance, double deposit, double withdraw,String accountnumber2, double balance2, double deposit2, double withdraw2,double transfer) {
+          super(accountnumber,balance,deposit,withdraw,accountnumber2,balance2,deposit2,withdraw2);
+       
+          this.transfer=transfer;
+      }
+      
+    @Override
+     public void displayaccountinfo() {
+        super.displayaccountinfo();
+        System.out.println(accountnumber2+" transfer money to "+accountnumber);
+        System.out.println("TRANSFER MONEY: "+ transfer);
+        double j= balance+deposit;
+        double k=j-withdraw;
+        double h=k+transfer;
+         double je= balance2+deposit2;
+        double ke=je-withdraw2;
+        double he=ke-transfer;
+        
+        System.out.println(accountnumber+" NEW BALANCE: "+ h);
+       
+        System.out.println(accountnumber2+" NEW BALANCE: "+ he);
+        
+     }
+    
+}
